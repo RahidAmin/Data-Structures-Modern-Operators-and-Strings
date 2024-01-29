@@ -97,3 +97,60 @@ checkBaggage('I have clothes,chocklates and food');
 checkBaggage('I have socks,shoes and shoe');
 checkBaggage('I have a knif ,food and book');
 checkBaggage('I have a gun and some foods');
+
+//------------Part 3
+
+console.log('a+very+nice+String'.split('+'));
+// console.log('Md Rahid Amin'.split(" "));
+const[firstName,middleName,lastName]='Md Rahid Amin'.split(" ");
+console.log(firstName,middleName,lastName)
+
+const fullName=['Md',middleName,lastName.toUpperCase()].join(' ');
+console.log(fullName)
+
+const capitalizeName=function(name)
+{
+    const name1=name.toLowerCase();
+    const names=name1.split(' ');
+    const namesUpperArr=[];
+    for(const n of names)
+    {
+       // namesUpperArr.push(n[0].toUpperCase()+n.slice(1));
+
+        namesUpperArr.push(n.replace(n[0],n[0].toUpperCase()));
+    }
+    console.log(namesUpperArr.join(' '))
+}
+
+capitalizeName('md rahid amin');
+capitalizeName('md RahiD amin sidDique RiVEN')
+
+//padding
+const message='this is md rahid amin';
+console.log(message.padStart(25,'+').padEnd(30,'-'));
+console.log('Rahid'.padStart(20,'+'));
+console.log('amin'.padEnd(20,'+'));
+
+//Mask Credit Card
+
+const maskCreditCard=function(number)
+{
+    // const number1=String(number);
+    const number1=number+'';
+    const last=number1.slice(-4);
+    console.log(last.padStart(number1.length,'*'));
+}
+
+maskCreditCard(1234567891011)
+maskCreditCard(874958596698398);
+
+//Repeat
+const message1=`Bad Weather..All Departure will Delayed \n`;
+                
+    console.log(message1.repeat(10))
+
+const planesInLine=function(number)
+{
+  console.log(`There are ${number} planes in line:${'🛬'.repeat(number)}`)
+}
+planesInLine(10);
